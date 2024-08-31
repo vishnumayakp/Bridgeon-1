@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="para">First Paragraph</p>
+    <p class="para">First Paragraph</p>
+    <p class="para">First Paragraph</p>
+    <p class="para">First Paragraph</p>
+    <p class="para">First Paragraph</p>
+    <p class="para">First Paragraph</p>
+    <button id="btn">click</button>
+    <script>
+        let para1=document.querySelectorAll('.para')
+        let click=document.getElementById('btn')
+        click.addEventListener('click',function(){
+           for(let i=0; i<para1.length; i++){
+            para1[i].textContent="Heloooo"+"guysss"
+           }
+        })
+
+    </script>
+</body>
+</html>
