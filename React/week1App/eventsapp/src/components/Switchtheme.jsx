@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import './switch.css'
 
 const Switchtheme = () => {
     const [color,setColor]=useState('white')
