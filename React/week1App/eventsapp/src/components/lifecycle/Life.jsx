@@ -6,12 +6,12 @@ const Life = () => {
     useEffect(()=>{
         console.log("mounting...")
         console.log('Updating...'+count)
-        console.log('Updating1...'+count1)
+        // console.log('Updating1...'+count1)
 
-        // return ()=>{
-        //     console.log("CleanUp..."+count)
-        // }
-    },[count,count1])
+        return ()=>{
+            console.log("CleanUp..."+count)
+        }
+    },[count])
     
   return (
     <div>
