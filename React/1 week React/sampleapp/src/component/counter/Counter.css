@@ -1,0 +1,21 @@
+.main-Cont{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .even{
+    width: 50%;
+    /* background-color: rgb(55, 112, 162); */
+    height: 400px;
+  }
+  /* .odd{
+    width: 50%;
+    background-color: rgb(141, 154, 165);
+    height: 400px;
+  }
+  html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  } */
