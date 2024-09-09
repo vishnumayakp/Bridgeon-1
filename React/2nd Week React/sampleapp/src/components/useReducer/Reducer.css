@@ -1,0 +1,41 @@
+.main-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 300px;
+    height: 200px;
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn1{
+    width: 50px;
+    height: 30px;
+    background-color: rgb(67, 198, 67);
+    border-radius: 10px;
+    margin-right: 30px;
+    margin-left: 10px;  
+}
+.btn2{
+    width: 50px;
+    height: 30px;
+    background-color: red;
+    border-radius: 10px;
+    margin-left: 30px;
+}
+.btn3{
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.btn4{
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;margin-left: 20px;  
+    margin-right: 10px;  
+}
