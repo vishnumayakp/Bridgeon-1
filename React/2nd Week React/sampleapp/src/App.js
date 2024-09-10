@@ -1,5 +1,8 @@
 
 import './App.css';
+import Parentcompo from './components/usecallback/Parentcompo';
+
+
 import Toggle from './components/useContext/custom hooks/Toggle';
 import Component1 from './components/useContext/propdrilling/Component1';
 import Context1 from './components/useContext/usecontext/Context1';
@@ -12,7 +15,10 @@ function App() {
       {/* <Reducer/> */}
       {/* <Component1 data={value}/> */}
       {/* <Context1/> */}
-      <Toggle/>
+      {/* <Toggle/> */}
+      {/* <Parent/> */}
+      <Parentcompo/>
+      
     </div>
   );
 }
