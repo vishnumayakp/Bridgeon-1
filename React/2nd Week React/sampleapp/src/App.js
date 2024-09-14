@@ -14,10 +14,10 @@ function App() {
     <div className="App">
       {/* <Reducer/> */}
       {/* <Component1 data={value}/> */}
-      {/* <Context1/> */}
+      <Context1/>
       {/* <Toggle/> */}
       {/* <Parent/> */}
-      <Parentcompo/>
+      {/* <Parentcompo/> */}
       
     </div>
   );
