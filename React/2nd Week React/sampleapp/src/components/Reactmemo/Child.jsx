@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Child() {
+function Child(props) {
     console.log("Child");
     
   return (
