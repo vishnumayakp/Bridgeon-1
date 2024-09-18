@@ -12,6 +12,7 @@ import Createblog from './components/Blogs/Createblog';
 import BlogDetail from './components/Blogs/BlogDetail';
 import HocLearn from './components/Hoc/HocLearn';
 import Hover from './components/Hoc/Hover';
+import Home from './components/NoteTakingApp/Home';
 
 export const Usecontext=createContext()
 function App() {
@@ -40,8 +41,15 @@ function App() {
       <Route path='/blogdetails' element={<BlogDetail/>}/>
     </Routes>
     </BrowserRouter> */}
-    <HocLearn/>
-    <Hover/>
+    {/* <HocLearn/>
+    <Hover/> */}
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/createnote' element={<Create/>}/>
+      <Route path='/detailsnote' element={<Details/>}/>
+    </Routes>
+    </BrowserRouter>
     </div>
   );
 }

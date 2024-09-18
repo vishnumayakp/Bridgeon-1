@@ -1,17 +1,17 @@
 import { createContext, useState } from "react";
 
-export const BlogContext=createContext()
+export const NoteContext=createContext()
 
-export const BlogProvider=({children})=>{
-    const [blog,setBlog]=useState([])
-    const addBlog=(title,body)=>{
-        setBlog([...blog,{id:Date.now(),title,body}])
+export const NoteProvider=({children})=>{
+    const [note,setNote]=useState([])
+    const addNote=(title,content)=>{
+        setNote([...note,{id:Date.now(),title,content}])
     }
 
     return (
-        <BlogContext.Provider value={{addBlog,blog}}>
+        <NoteContext.Provider value={{addNote,note}}>
             {children}
-        </BlogContext.Provider>
+        </NoteContext.Provider>
     )
 }
 
