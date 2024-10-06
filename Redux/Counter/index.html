@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 >Counter: <span id="value">_</span></h2>
+   <div style="display: flex;">
+    <button id="increment" style="height: 20px; ">Increment</button>-
+    <button id="decrement" style="height: 20px;">Decrement</button>
+   </div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.1.2/redux.min.js"></script>
+   <script>
+    const {createStore} = Redux;
+
+    const initialState={
+        value:0
+    }
+    function appReducer(prevState=initialState, action){
+
+        switch (action.type) {
+            case 'increment':
+                return{
+                    ...prevState,
+                    value:prevState.value+1
+                }
+            case 'decrement':
+                return{
+                    ...prevState,
+                    value:prevState.value-1
+                }
+        
+            default:
+                return prevState
+        }
+    }
+
+    const store = createStore(appReducer)
+    const state= store.getState()  //to take the currentState
+
+
+    store.subscribe(()=>{
+        document.getElementById('value').innerText=store.getState().value;
+    })
+
+    document.getElementById('value').innerText=state.value
+
+    document.getElementById('increment').onclick=()=>{
+        store.dispatch({
+            type:'increment'
+        })
+    }
+    document.getElementById('decrement').onclick=()=>{
+        store.dispatch({
+            type:'decrement'
+        })
+    }
+
+   </script>
+   
+</body>
+</html>
