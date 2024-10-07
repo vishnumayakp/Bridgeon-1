@@ -4,7 +4,10 @@ import Reducer from './components/Reducer';
 
 function App() {
   return (
-    <Reducer/>
+    <div>
+      <h1>Redux Counter App</h1>
+      <Reducer/>
+    </div>
   );
 }
 
