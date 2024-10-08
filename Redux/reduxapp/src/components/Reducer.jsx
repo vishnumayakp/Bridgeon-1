@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { increment,decrement,green,red } from '../Redux/Store'
+import { increment,decrement} from '../Redux-Toolkit/valueReducer'
 
 function Reducer() {
     const value= useSelector((state)=> state.value)
@@ -19,14 +19,14 @@ function Reducer() {
             dispatch(decrement())
         }}>Decrement</button>
     </div>
-    <div style={{width:'200px', height:'200px',backgroundColor:'hotpink',display:'flex'}}>
+    {/* <div style={{width:'200px', height:'200px',backgroundColor:'hotpink',display:'flex'}}>
         <button onClick={()=>{
             dispatch(green())
         }} style={{width:'50%'}}>Green</button>
         <button onClick={()=>{
             dispatch(red())
         }} style={{width:'50%'}}>Red</button>
-    </div>
+    </div> */}
     </div>
     </div>
   )

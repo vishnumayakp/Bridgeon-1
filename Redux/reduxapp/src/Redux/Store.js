@@ -1,16 +1,17 @@
 import { createStore,combineReducers,applyMiddleware } from "redux"
 import logger from 'redux-logger'
+import {thunk} from 'redux-thunk'
 
     const initialState={
         value:0,
         color:'white'
     }
 
-    const appReducer=combineReducers({
-        value,
-        color,
-        data:dataInfo
-    })
+    const appReducer = combineReducers({
+        value: value,     // Handles `value` part of the state
+        color: color,     // Handles `color` part of the state
+        dataInfo: dataInfo  // Handles `dataInfo` part of the state
+    });
 
     // function appReducer(prevState=initialState, action){
     //     return{
@@ -55,19 +56,19 @@ import logger from 'redux-logger'
             case 'set-data':
                 return{
                     ...state,
-                    data:action.payLoad
+                    data:action.payload
                 }
     
             case 'set-loading':
                 return{
                     ...state,
-                    loading:action.payLoad
+                    loading:action.payload
                 }
     
             case 'set-error':
             return{
                 ...state,
-                error:action.payLoad
+                error:action.payload
             }
             
             default:
@@ -75,53 +76,53 @@ import logger from 'redux-logger'
         }
       }
 
-//      function increment(){
-//         return{
-//             type:'increment'
-//         }
-//      }
+     function increment(){
+        return{
+            type:'increment'
+        }
+     }
 
-//     function decrement(){
-//         return {
-//             type:'decrement'
-//         }
-//     } 
+    function decrement(){
+        return {
+            type:'decrement'
+        }
+    } 
 
-//    function green(){
-//     return {
-//         type:'green'
-//     }
-//    } 
+   function green(){
+    return {
+        type:'green'
+    }
+   } 
 
-//   function red(){
-//     return{
-//         type:'red'
-//     }
-//   } 
+  function red(){
+    return{
+        type:'red'
+    }
+  } 
 
   function setData(data){
     return{
         type:'set-data',
-        payLoad:data
+        payload:data
     }
   }
   function setLoading(loading){
     return{
         type:'set-loading',
-        payLoad:loading
+        payload:loading
     }
   }
   function setError(error){
     return{
         type:'set-error',
-        payLoad:error
+        payload:error
     }
   }
 
 
   
 
-    const store = createStore(appReducer,applyMiddleware(logger))
+    const store = createStore(appReducer,applyMiddleware(thunk))
     // const state= store.getState()  //to take the currentState
     // console.log(store.getState());
     
@@ -144,10 +145,10 @@ import logger from 'redux-logger'
     // }
     export default store
      export {
-    //     increment,
-    //     decrement,
-    //     green,
-    //     red,
+        increment,
+        decrement,
+        green,
+        red,
         setData,
         setLoading,
         setError
