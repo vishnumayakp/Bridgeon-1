@@ -6,16 +6,16 @@
 // console.log(sum(1,20,20));
 
 
-//Currying version of the same function
+// Currying version of the same function
 
-// function sum(a){
-//     return function(b){
-//         return function(c){
-//             return a+b+c
-//         }
-//     }
-// }
-// console.log(sum(10)(20)(30));
+function sum(a){
+    return function(b){
+        return function(c){
+            return a+b+c
+        }
+    }
+}
+console.log(sum(10)(20)(30));
 
 
 // const myObj={

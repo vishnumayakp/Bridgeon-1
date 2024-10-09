@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import {useDispatch, useSelector} from 'react-redux'
-import getDataInfo from '../Redux/api'
+import getDataInfo from '../Redux-Toolkit/dataInfoReducer'
 
 function Home() {
     // const [product,setProduct]=useState([])
-    const data= useSelector(state=>(state.dataInfo.data))
-    const loading =useSelector(state=>state.dataInfo.loading)
-    const error=useSelector(state=>state.dataInfo.error)
+    const data= useSelector((state)=>state.dataInfo.data)
+    const loading =useSelector((state)=>state.dataInfo.loading)
+    const error=useSelector((state)=>state.dataInfo.error)
     const dispatch=useDispatch()
+    
 
     useEffect(()=>{
       //  axios.get('http://localhost:5000/products')
       //  .then((res)=>setProduct(res.data))
       // getDataInfo(dispatch)
       dispatch(getDataInfo())
-    },[])
+    },[dispatch])
   return (
       <div>
          {loading && <div style={{backgroundColor:'green'}}>Loading......</div> }

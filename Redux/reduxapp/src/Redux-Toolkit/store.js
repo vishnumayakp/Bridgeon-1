@@ -4,7 +4,7 @@ import dataInfoReducer from './dataInfoReducer'
 
 const store=configureStore({
     reducer:{
-        value:valueReducer,
+        // value:valueReducer,
         dataInfo:dataInfoReducer
     }
 })
