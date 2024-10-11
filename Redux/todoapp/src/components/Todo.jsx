@@ -1,12 +1,13 @@
 import React,{useState} from 'react'
 import {useSelector,useDispatch} from 'react-redux'
-import { addTodos ,delTodo, editTodo } from '../Todo Toolkit/toDoSlice'
+import { addTodos ,delTodo, editTodo, showData } from '../Todo Toolkit/toDoSlice'
 
 function Todo() {
   const [data,setData]=useState('')
   const [editId,setEDitId]=useState(null)
   const [updateTodo,setUpdateTodo]=useState('')
   const todos=useSelector((state)=>state.todos.list)  
+  const showTodos=useSelector((state)=>state.todos.complete)
   const dispatch=useDispatch()
   console.log(todos);
   function addTodo(){
@@ -34,6 +35,10 @@ function Todo() {
     setEDitId(null)
 
   }
+
+  function handleComplete(id,data){
+    dispatch(showData({id,text:data}))
+  }
   return (
     <div style={{textAlign:'center'}}>
       <h1>Todo List App</h1>
@@ -55,12 +60,22 @@ function Todo() {
             <input type="text" value={value.text} style={{border:'none',backgroundColor:'white',marginTop:'20px'}} disabled  />
             <button onClick={()=>deleteTodo(value.id)} style={{marginLeft:'20px'}}>Del</button>
             <button onClick={()=>editData(value.id,value.text)} style={{marginLeft:'10px'}}>Edit</button>
+            <button onClick={()=>handleComplete(value.id,value.text)}>Completed</button>
           </div>
           )}
         </div>
 
         )
       })}
+
+      <div>
+        <h1>Completed</h1>
+        {showTodos.map((value)=>{
+          return(
+            <p>{value.text}</p>
+          )
+        })}
+      </div>
     </div>
   )
 }

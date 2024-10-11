@@ -1,7 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit'
 
 const initialState={
-    list:[]
+    list:[],
+    complete:[]
 }
 const toDoSlice=createSlice({
     name:'todos',
@@ -19,8 +20,13 @@ const toDoSlice=createSlice({
            if(upData){
             upData.text=data
            }
+        },
+
+        showData:(state,action)=>{
+            state.complete.push(action.payload)
+            state.list=state.list.filter((todo)=>todo.id!== action.payload.id)
         }
     }
 })
-export const {addTodos,delTodo,editTodo}=toDoSlice.actions;
+export const {addTodos,delTodo,editTodo,showData}=toDoSlice.actions;
 export default toDoSlice.reducer;
