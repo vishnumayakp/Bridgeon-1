@@ -1,0 +1,49 @@
+.animation{
+    width: 30%;
+    height: 200px;
+    background-color: hotpink;
+    animation-name: example;
+    animation-duration: 5s;
+    margin-right: 20px;
+}
+
+@keyframes example {
+    from{background-color: hotpink;}
+    to{background-color: navy;}
+}
+
+.transition{
+    width: 30%;
+    height: 200px;
+    background-color: rgb(224, 224, 39);
+    margin-right: 20px;
+    transition: width 2s,height 2s;   
+}
+
+.transition:hover{
+    width: 50%;
+    height: 400px;
+}
+
+.transform{
+    width: 30%;
+    height: 200px;
+    background-color: tomato;
+    margin-right: 20px;   
+}
+
+.transform:hover{
+    transform: rotate(20deg);
+}
+
+.trans{
+    width: 30%;
+    height: 200px;
+    background-color: rgb(66, 241, 31);
+    margin-right: 20px;  
+    transition: width 2s,height 2s, transform 2s;  
+}
+
+.trans:hover{
+    transform: rotate(180deg);
+}
