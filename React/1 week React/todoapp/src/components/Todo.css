@@ -67,10 +67,11 @@
     height: 2em;
     background-color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     border-radius: 6px;
     padding: 5px;
+    
   }
   .app .todos .todo .left {
     display: flex;
@@ -93,6 +94,7 @@
     border-radius: 10px;
     color: white;
     margin-right: 15px;
+    border: none;
   }
   .btn1{
     width: 50px;
@@ -101,5 +103,18 @@
     border: none;
     border-radius: 10px;
     color: white;
-    margin-left: 150px;
+    /* margin-left: 125px; */
   }
+
+  .btn2{
+    width: 50px;
+    height: 34px;
+    background-color: blue;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-left: 10px;  
+  }
+  /* .buttons{
+    
+  } */
